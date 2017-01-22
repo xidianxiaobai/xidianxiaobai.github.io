@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-15T08:38:44.277Z</updated>
+  <updated>2017-01-22T10:18:29.735Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello_blog</title>
+    <link href="http://yoursite.com/2017/01/22/hello-blog/"/>
+    <id>http://yoursite.com/2017/01/22/hello-blog/</id>
+    <published>2017-01-22T10:18:29.000Z</published>
+    <updated>2017-01-22T10:18:29.735Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>hello</title>
@@ -29,20 +43,6 @@
     
       &lt;p&gt;化了好久的时间还是没有搭建好。&lt;/p&gt;
 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>first title</title>
-    <link href="http://yoursite.com/2017/01/15/first-title/"/>
-    <id>http://yoursite.com/2017/01/15/first-title/</id>
-    <published>2017-01-15T04:32:31.000Z</published>
-    <updated>2017-01-15T04:32:31.125Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
