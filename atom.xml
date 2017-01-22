@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-22T10:18:29.735Z</updated>
+  <updated>2017-01-22T15:16:53.756Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,16 +16,206 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hello_blog</title>
+    <title>Hexo和github搭建博客</title>
     <link href="http://yoursite.com/2017/01/22/hello-blog/"/>
     <id>http://yoursite.com/2017/01/22/hello-blog/</id>
-    <published>2017-01-22T10:18:29.000Z</published>
-    <updated>2017-01-22T10:18:29.735Z</updated>
+    <published>2017-01-22T10:18:29.720Z</published>
+    <updated>2017-01-22T15:16:53.756Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>   真的是一把心酸一把泪啊!!</p>
+<p>   <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1485081828&amp;di=598587dcc3d606a5767fb5c28d529915&amp;src=http://img3.duitang.com/uploads/blog/201505/03/20150503084655_BFvQd.thumb.700_0.jpeg" alt=""></p>
+<p>  经过各种找资料，踩过各种坑，终于使用 hexo 搭建个人博客初步完成了，域名目前用得时 github 的。写这篇也是为了纪念下，多的不说先开整。</p>
+<h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><h3 id="大致为一下几个步骤："><a href="#大致为一下几个步骤：" class="headerlink" title="大致为一下几个步骤："></a>大致为一下几个步骤：</h3><ol>
+<li>环境搭建</li>
+<li>安装Hexo</li>
+<li>配置Hexo</li>
+<li>Hexok与github的连接</li>
+<li>发布文章</li>
+<li>主题更换</li>
+<li>主题的简单配置</li>
+</ol>
+<h2 id="环境搭建："><a href="#环境搭建：" class="headerlink" title="环境搭建："></a>环境搭建：</h2><p> Node.js 和 git 环境，gitHub 账户的配置</p>
+<ul>
+<li>Node.js    的安装和准备</li>
+<li>Git    的安装和准备</li>
+<li>github        账户配置</li>
+</ul>
+<h3 id="配置Node-js环境"><a href="#配置Node-js环境" class="headerlink" title="配置Node.js环境"></a>配置Node.js环境</h3><p>下载Node.js安装文件：</p>
+<blockquote>
+<p>Windows Installer 32-bit<br><a href="https://nodejs.org/dist/v4.2.3/node-v4.2.3-x86.msi" target="_blank" rel="external">https://nodejs.org/dist/v4.2.3/node-v4.2.3-x86.msi</a></p>
+<p>Windows Installer 64-bit<br><a href="https://nodejs.org/dist/v4.2.3/node-v4.2.3-x64.msi" target="_blank" rel="external">https://nodejs.org/dist/v4.2.3/node-v4.2.3-x64.msi</a></p>
+</blockquote>
+<p>根据自己Windows版本选择对应的软件，一路next。轻松搞定。安装完成后测试一下，<strong>Win+R</strong>。</p>
+<p><img src="http://i.imgur.com/8tZe2Ce.png" alt=""><br>输入<strong>cmd</strong>，打开命令行界面，在界面中输入：</p>
+<pre><code>node -v
+npm -v
+</code></pre><p>安装正确就是下图中的显示，可以进行下一步了，如果不正确，则需要回头检查自己的安装过程。（自行百度吧）</p>
+<p><img src="http://i.imgur.com/3wDv7bh.png" alt=""></p>
+<h3 id="github账户的注册和配置"><a href="#github账户的注册和配置" class="headerlink" title="github账户的注册和配置"></a>github账户的注册和配置</h3><ul>
+<li>注册github账号</li>
+</ul>
+<p>打开<a href="http://github.com" target="_blank" rel="external">http://github.com</a>，输入自己的用户名，邮箱和密码。</p>
+<p><img src="http://i.imgur.com/sCHj8Cj.png" alt=""><br>然后看自己刚才填写的邮箱，点开 github 发送给你的注册确认信，确认注册，结束注册流程</p>
+<p>-创建一个库<br>登陆github，点击页面右上角的”+”，选择New repository:</p>
+<p><img src="http://i.imgur.com/apHMbuV.png" alt=""></p>
+<ul>
+<li>新建一个库</li>
+</ul>
+<p>进入代码库创建页面：</p>
+<p>在 Repository name下填写 yourname.github.io，Description (optional) 下填写一些简单的描述（养成好习惯，随便写一点）：</p>
+<p><img src="http://i.imgur.com/Dheeo9b.png" alt=""><br><em>比如我的 github 名称是xidianxiaobai,里面就填 xidianxiaobai.github.io,如果你的名字是 ergou，那你就填 ergou.github.io</em></p>
+<ul>
+<li>设置</li>
+</ul>
+<p>创建好后，会出现这样的界面：</p>
+<p> <img src="http://i.imgur.com/fG3nkSc.png" alt=""><br>点击界面的 Settings，你将会打开这个库的 setting 页面，向下拖动，直到看见 GitHub Pages，如图：</p>
+<p><img src="http://i.imgur.com/ks8SWqL.png" alt=""><br><img src="http://i.imgur.com/CXAGSpl.png" alt=""><br>选好后，确认就会创建一个初始化的界面了。输出yourname.github.io，就能看到你刚刚创建好的。</p>
+<h3 id="配置git环境"><a href="#配置git环境" class="headerlink" title="配置git环境"></a>配置git环境</h3><blockquote>
+<p>下载git安装包：<br><a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a></p>
+</blockquote>
+<p>打开安装</p>
+<p><img src="http://i.imgur.com/bvHPmiO.png" alt=""></p>
+<p><img src="http://i.imgur.com/NwVHdTS.png" alt=""><br>这样勾选就可以了。</p>
+<blockquote>
+<p>（想要深入研究git,推荐github入门与实践）</p>
+</blockquote>
+<p>在<strong>cmd</strong>里面输入<br> <code>git --version</code><br>出现</p>
+<p><img src="http://i.imgur.com/UUiR2eP.png" alt=""></p>
+<p>说明安装正确。</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>自行创建一个文件夹，我安装的路径为D:/hexo。在命令行界面进入该目录：</p>
+<p><img src="http://i.imgur.com/htcwTKz.png" alt=""></p>
+<p>输入：</p>
+<pre><code>npm install hexo-cli -g
+</code></pre><p>你会看到一个WARN，但是不用担心，这不会影响你的正常使用。 然后输入：</p>
+<pre><code>npm install hexo --save
+</code></pre><p><em>鉴于我已经安装完成了，没有插图。。只要不是输入错误，一般是没问题的。</em><br>再输入：</p>
+<pre><code>hexo -v
+</code></pre><p><img src="http://i.imgur.com/rvHUSrm.png" alt=""></p>
+<p>基本的环境配置就已经弄好了。</p>
+<h2 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h2><ul>
+<li>初始化 hexo</li>
+</ul>
+<p>接上面的操作，继续输入：</p>
+<pre><code>hexo init
+</code></pre><p>再输入：</p>
+<pre><code>npm install
+</code></pre><p>就在安装相应的组件了，去喝杯水，上个厕所就差不多了。</p>
+<ul>
+<li>hexo 体验</li>
+</ul>
+<p>在命令行继续输入：</p>
+<pre><code>hexo g
+</code></pre><p>然后输入：</p>
+<pre><code>hexo s
+</code></pre><p>就会提示：</p>
+<pre><code>INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
+</code></pre><p>在浏览其中打开<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>，你就会看到：<br><img src="http://i.imgur.com/pHtGNxN.png" alt=""><br>本地配置就已经完成了。</p>
+<p>安装一个扩展：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>如果出现错误的话，是你的public key没有设置好。<br>可参考：<br><a href="http://blog.csdn.net/gdutxiaoxu/article/details/53573399" target="_blank" rel="external">http://blog.csdn.net/gdutxiaoxu/article/details/53573399</a></p>
+<h2 id="hexo和github的连接"><a href="#hexo和github的连接" class="headerlink" title="hexo和github的连接"></a>hexo和github的连接</h2><h3 id="配置Git个人信息"><a href="#配置Git个人信息" class="headerlink" title="配置Git个人信息"></a>配置Git个人信息</h3><ul>
+<li><p>设置Git</p>
+<p>  <code>git config --global user.name &quot;xidianxiaobai&quot;</code><br>  <code>git config --global user.email &quot;951107308@qq.com&quot;</code></p>
+</li>
+<li><p>生成密钥</p>
+<p> <code>ssh-kegen -t rsa -C &quot;951107308@qq.com&quot;</code></p>
+</li>
+</ul>
+<h3 id="配置Deplyment"><a href="#配置Deplyment" class="headerlink" title="配置Deplyment"></a>配置Deplyment</h3><p>在 hexo 的根目录里找到_config.yml文件中找到Deployment，做修改：<br><img src="http://i.imgur.com/C4pRrXk.png" alt=""></p>
+<p>我的仓库的地址是git@github.com：xidianxiaobai/xidianxiaobai.github.io.git，所以配置就是图中的。你可按照你注册时的那几步做相应的修改。</p>
+<hr>
+<p>切记在改的时候，： 后面要加空格！！！！</p>
+<hr>
+<h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><p>新建一篇博客：</p>
+<pre><code>hexo new hello
+</code></pre><p>这时候在我的 电脑的目录下 <code>d:\hexo\source_posts</code> 将会看到<code>hello.md</code>文件。</p>
+<p>用MarkDown编辑器打开就可以编辑文章了。文章编辑好之后，运行生成、部署命令：</p>
+<pre><code>hexo g
+hexo d
+</code></pre><p>部署成功后访问你的地址 <a href="https://yourName.github.io，将可以看到你刚刚发布的文章了。" target="_blank" rel="external">https://yourName.github.io，将可以看到你刚刚发布的文章了。</a></p>
+<h2 id="主题更换"><a href="#主题更换" class="headerlink" title="主题更换"></a>主题更换</h2><p>每个不同的主题会需要不同的配置，主题配置文件在主题目录下的 _config.yml。我目前使用的是比较常用的nexT主题：</p>
+<blockquote>
+<p><strong>NexT</strong></p>
+<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">http://theme-next.iissnan.com/getting-started.html</a></p>
+</blockquote>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。</p>
+<p> 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 <strong>站点配置文件</strong>， 后者称为 <strong>主题配置文件。</strong></p>
+<h3 id="安装NexT"><a href="#安装NexT" class="headerlink" title="安装NexT"></a>安装NexT</h3><p>Hexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。具体到 NexT 来说，安装步骤如下。</p>
+<p>如果你熟悉 Git， 建议你使用 克隆最新版本 的方式，之后的更新可以通过 git pull 来快速更新， 而不用再次下载压缩包替换。</p>
+<p>在终端窗口下，定位到 Hexo 站点目录下。使用 Git 命令：</p>
+<pre><code>cd your-hexo-site
+git clone https://github.com/iissna/hexo-theme-next-themes/next
+</code></pre><h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。启用 NexT 主题：</p>
+<pre><code>theme next
+</code></pre><p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 <code>hexo clean</code> 来清除 Hexo 的缓存。</p>
+<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是 hexo s –debug。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出：</p>
+<pre><code>INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.
+</code></pre><p>此时即可使用浏览器访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> ，检查站点是否正确运行。</p>
+<h3 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h3><p><strong>选择 Scheme</strong></p>
+<p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<ol>
+<li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白。</li>
+<li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
+<li>Pisces - 双栏 Scheme，小家碧玉似的清新</li>
+</ol>
+<p>Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 #删除即可。</p>
+<p>选择 Pisce Scheme</p>
+<pre><code>#scheme: Muse
+#scheme: Mist
+scheme: Pisces
+</code></pre><h3 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h3><p>编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下：</p>
+<pre><code>language: zh-Hans
+</code></pre><p>可参考：<br><a href="https://hexo.io/zh-cn/docs/internationalization.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/internationalization.html</a></p>
+<h3 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h3><p>菜单配置包括三个部分</p>
+<ol>
+<li>菜单项（名称和链接）</li>
+<li>菜单项的显示文本</li>
+<li><p>菜单项对应的图标。</p>
+<p>NexT 使用的是 Font Awesome 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
+</li>
+</ol>
+<p>编辑 主题配置文件，修改以下内容：</p>
+<p>设定菜单内容，对应的字段是<code>menu</code>。 菜单内容的设置格式是：<code>item name: link</code>。其中<code>item name</code>是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。</p>
+<p>菜单示例配置：</p>
+<p><img src="http://i.imgur.com/eTEUdp9.png" alt=""></p>
+<p>若你的站点运行在子目录中，请将链接前缀的 / 去掉。</p>
+<p>具体可参照：<br><a href="https://hexo.io/zh-cn/docs/variables.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/variables.html</a></p>
+<h3 id="侧栏"><a href="#侧栏" class="headerlink" title="侧栏"></a>侧栏</h3><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置。 可以通过修改 主题配置文件 中的 sidebar 字段来控制侧栏的行为。侧栏的设置包括两个部分，其一是侧栏的位置， 其二是侧栏显示的时机。</p>
+<p>设置侧栏的位置，修改 sidebar.position 的值，支持的选项有：</p>
+<pre><code>left - 靠左放置
+
+right - 靠右放置
+</code></pre><h3 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h3><p>编辑 站点配置文件， 新增字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是：</p>
+<ul>
+<li>完整的互联网 <a href="http://example.com/avtar.png" target="_blank" rel="external">URI：http://example.com/avtar.png</a></li>
+<li>站点内的地址：将头像放置主题目录下的 source/uploads/ （新建uploads目录若不存在） 配置为：avatar: /uploads/avatar.png 或者 放置在 source/images/ 目录下 , 配置为：avatar: /images/avatar.png</li>
+</ul>
+<h3 id="设置作者昵称"><a href="#设置作者昵称" class="headerlink" title="设置作者昵称"></a>设置作者昵称</h3><p>编辑 站点配置文件， 设置 author 为你的昵称。</p>
+<h3 id="站点描述"><a href="#站点描述" class="headerlink" title="站点描述"></a>站点描述</h3><p>编辑 站点配置文件， 设置字段为你的站点描述。站点描述可以是你喜欢的一句签名:)</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p>手把手教你搭建属于自己的博客</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238322&amp;idx=1&amp;sn=bbd584be8b869667ca4364f474fc4db2&amp;chksm=88639c1dbf14150bab0e8da571609ae85dd161dbf13b36c06b5e809f6c9291866f9f472340f2&amp;mpshare=1&amp;scene=23&amp;srcid=0115Au3Oil8WknV6k9jz2J04#rd" target="_blank" rel="external"> http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238322&amp;idx=1&amp;sn=bbd584be8b869667ca4364f474fc4db2&amp;chksm=88639c1dbf14150bab0e8da571609ae85dd161dbf13b36c06b5e809f6c9291866f9f472340f2&amp;mpshare=1&amp;scene=23&amp;srcid=0115Au3Oil8WknV6k9jz2J04#rd</a></p>
+<p> hexo中文手册</p>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">https://hexo.io/zh-cn/</a></p>
+</blockquote>
+]]></content>
     
     <summary type="html">
     
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;   真的是一把心酸一把泪啊!!&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;https://ss0.bdstatic.com/94oJfD_b
+    
     </summary>
     
+      <category term="Testing" scheme="http://yoursite.com/categories/Testing/"/>
+    
+    
+      <category term="Testing" scheme="http://yoursite.com/tags/Testing/"/>
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Another Tag" scheme="http://yoursite.com/tags/Another-Tag/"/>
     
   </entry>
   
